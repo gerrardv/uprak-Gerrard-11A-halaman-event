@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Festival Musik Jakarta 2025</title>
+  <style>
+    :root {
+      --biru: #345d88;
+      --biru-tua: #4e6f92;
+      --silver: #f0f0f0;
+      --putih: #ffffff;
+      --teks: #222;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      background-color: #f0f0f0;
+      color: var(--teks);
+    }
+
+    .top-header {
+      position: sticky;
+      top: 0;
+      background-color: #345d88;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    .top-header img.logo {
+      height: 40px;
+    }
+
+    header.hero {
+      background-image: url('images/hero.jpg'); /* Gambar */
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3em;
+      margin-bottom: 0.2em;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+
+    .hero-text p {
+      font-size: 1.2em;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      margin-bottom: 20px;
+      font-size: 2em;
+      color: #345d88;
+      border-left: 5px solid #345d88;
+      padding-left: 10px;
+    }
+
+    .event-schedule ul {
+      list-style: none;
+      background: #f0f0f0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .event-schedule li {
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .event-schedule li:last-child {
+      border-bottom: none;
+    }
+
+    .speakers-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .speaker-card {
+      flex: 1;
+      min-width: 250px;
+      background: var(--putih);
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .speaker-card img {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .registration-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      background: var(--putih);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .registration-form input,
+    .registration-form select {
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .registration-form button {
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 5px;
+      background-color: #345d88;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .registration-form button:hover {
+      background-color:  #4e6f92;
+    }
+
+    footer {
+      background: #345d88;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo -->
+  <div class="top-header">
+    <img class="logo" src="images/logo.png" alt="Logo Festival" />
+  </div>
+
+  <!-- Judul -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Festival Musik Jakarta 2025</h1>
+      <p>Rasakan pengalaman musik terbaik di jantung kota!</p>
+    </div>
+  </header>
+
+  <!-- Deskripsi -->
+  <section class="event-description">
+    <h2>Tentang Acara</h2>
+    <p>Festival Musik Jakarta 2025 mempersembahkan berbagai genre musik dari band lokal hingga artis internasional. Acara ini akan berlangsung selama 3 hari di Lapangan Banteng, Jakarta Pusat.</p>
+  </section>
+
+  <!-- Jadwal -->
+  <section class="event-schedule">
+    <h2>Jadwal Acara</h2>
+    <ul>
+      <li><strong>Hari 1:</strong> Pembukaan & Penampilan Band Indie (10.00 - 22.00)</li>
+      <li><strong>Hari 2:</strong> Talkshow & Workshop Musik (09.00 - 18.00)</li>
+      <li><strong>Hari 3:</strong> Konser Utama & Penutupan (16.00 - 23.00)</li>
+    </ul>
+  </section>
+
+  <!-- Pengisi Acara -->
+  <section class="event-speakers">
+    <h2>Pengisi Acara</h2>
+    <div class="speakers-container">
+      <div class="speaker-card">
+        <img src="images/raisa.jpg" alt="Raisa">
+        <h3>Raisa</h3>
+        <p>Penyanyi Pop Indonesia</p>
+      </div>
+      <div class="speaker-card">
+        <img src="images/erk.jpg" alt="Efek Rumah Kaca">
+        <h3>Efek Rumah Kaca</h3>
+        <p>Band Indie Rock</p>
+      </div>
+      <div class="speaker-card">
+        <img src="images/winky.jpg" alt="DJ Winky">
+        <h3>DJ Winky</h3>
+        <p>Electronic Music Artist</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Pendaftaran -->
+  <section class="registration-form">
+    <h2>Daftar Sekarang</h2>
+    <form>
+      <input type="text" placeholder="Nama Lengkap" required>
+      <input type="email" placeholder="Email" required>
+      <input type="tel" placeholder="Nomor HP" required>
+      <select>
+        <option>Pilih Hari Kehadiran</option>
+        <option>Hari 1</option>
+        <option>Hari 2</option>
+        <option>Hari 3</option>
+        <option>Semua Hari</option>
+      </select>
+      <button type="submit">Daftar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Festival Musik Jakarta. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

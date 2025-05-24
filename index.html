@@ -169,10 +169,69 @@
     }
 
     footer {
-      background: #345d88;
-      color: white;
-      text-align: center;
-      padding: 20px;
+  background-color: #345d88;
+  color: white;
+  padding: 40px 20px 20px 20px;
+  font-size: 14px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto 30px auto;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-column {
+  flex: 1 1 250px;
+  min-width: 200px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  border-left: 5px solid #f0f0f0;
+  padding-left: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.social-icons a {
+  margin-right: 15px;
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1); /* agar icon putih */
+  transition: filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+  filter: brightness(0.7) invert(1);
+}
+
+.footer-bottom {
+  background-color: #345d88;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 13px;
+
     }
   </style>
 </head>
@@ -251,9 +310,54 @@
     </form>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Festival Musik Jakarta. All Rights Reserved.</p>
-  </footer>
+
+   
+    <footer>
+        <div class="footer-top">
+          <div class="footer-column">
+            <h3>Related Sites</h3>
+            <ul>
+              <li>Singapore Tourism Board</li>
+              <li>Business Events</li>
+              <li>Visit Southeast Asia</li>
+            </ul>
+          </div>
+      
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul>
+              <li>Call Us</li>
+              <li>Write to Us</li>
+              <li>Singapore Visitor Center</li>
+            </ul>
+          </div>
+      
+          <div class="footer-column">
+            <h3>Connect with Us</h3>
+            <div class="social-icons">
+              <a href="#"><img src="facebook.svg" alt="facebook"></a>
+              <a href="#"><img src="instagram.svg" alt="Instagram"></a>
+              <a href="#"><img src="youtube.svg" alt="YouTube"></a>
+              <a href="#"><img src="tiktok.svg" alt="TikTok"></a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <div class="footer-links">
+            <span>Terms of Use</span>
+            <span>Privacy</span>
+            <span>Cookie Policy</span>
+            <span>Sitemap</span>
+            <span>Report Vulnerability</span>
+          </div>
+          <div class="copyright">
+            <p>&copy; 2024 Singapore Tourism Board</p>
+            <p>Last Updated 22 May 2025</p>
+          </div>
+        </div>
+      </footer>
+
 
   <!-- Script Slideshow -->
   <script>

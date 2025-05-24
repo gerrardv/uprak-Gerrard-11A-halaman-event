@@ -5,14 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Festival Musik Jakarta 2025</title>
   <style>
-    :root {
-      --biru: #345d88;
-      --biru-tua: #4e6f92;
-      --silver: #f0f0f0;
-      --putih: #ffffff;
-      --teks: #222;
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -22,8 +14,7 @@
 
     body {
       line-height: 1.6;
-      background-color: #f0f0f0;
-      color: var(--teks);
+      background-color: #c3c9d6;
     }
 
     .top-header {
@@ -42,7 +33,8 @@
     }
 
     header.hero {
-      background-image: url('images/hero.jpg'); /* Gambar */
+      position: relative;
+      background-image: url('people-festival.jpg');
       background-size: cover;
       background-position: center;
       height: 80vh;
@@ -51,6 +43,7 @@
       justify-content: center;
       color: white;
       text-align: center;
+      transition: background-image 1s ease-in-out;
     }
 
     .hero-text h1 {
@@ -62,6 +55,29 @@
     .hero-text p {
       font-size: 1.2em;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    }
+
+    /* Tombol Panah */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+      user-select: none;
+      border-radius: 50%;
+    }
+
+    .arrow.left {
+      left: 20px;
+    }
+
+    .arrow.right {
+      right: 20px;
     }
 
     section {
@@ -80,7 +96,7 @@
 
     .event-schedule ul {
       list-style: none;
-      background: #f0f0f0;
+      background: #f5eeee;
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.05);
@@ -104,7 +120,7 @@
     .speaker-card {
       flex: 1;
       min-width: 250px;
-      background: var(--putih);
+      background: #f0f0f0;
       padding: 20px;
       text-align: center;
       border-radius: 8px;
@@ -123,7 +139,7 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
-      background: var(--putih);
+      background: #f0f0f0;
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -164,18 +180,22 @@
 
   <!-- Logo -->
   <div class="top-header">
-    <img class="logo" src="images/logo.png" alt="Logo Festival" />
+    <img class="logo" src="GIS-White-2-400x145.webp" alt="Logo Festival" />
   </div>
 
-  <!-- Judul -->
-  <header class="hero">
+  <!-- Hero Section -->
+  <header class="hero" id="hero">
+    <div class="arrow left" onclick="prevImage()">&#10094;</div>
+    <div class="arrow right" onclick="nextImage()">&#10095;</div>
     <div class="hero-text">
       <h1>Festival Musik Jakarta 2025</h1>
       <p>Rasakan pengalaman musik terbaik di jantung kota!</p>
     </div>
   </header>
 
-  <!-- Deskripsi -->
+  <!-- Section lainnya (tidak diubah) -->
+  <!-- ... sama seperti sebelumnya ... -->
+
   <section class="event-description">
     <h2>Tentang Acara</h2>
     <p>Festival Musik Jakarta 2025 mempersembahkan berbagai genre musik dari band lokal hingga artis internasional. Acara ini akan berlangsung selama 3 hari di Lapangan Banteng, Jakarta Pusat.</p>
@@ -213,7 +233,7 @@
     </div>
   </section>
 
-  <!-- Form Pendaftaran -->
+  <!-- Form -->
   <section class="registration-form">
     <h2>Daftar Sekarang</h2>
     <form>
@@ -234,6 +254,34 @@
   <footer>
     <p>&copy; 2025 Festival Musik Jakarta. All Rights Reserved.</p>
   </footer>
+
+  <!-- Script Slideshow -->
+  <script>
+    const hero = document.getElementById('hero');
+    const images = [
+      'people-festival.jpg',
+      'people-concert-with-smoke-overlay-texture.jpg',
+      'excited-audience-watching-confetti-fireworks-having-fun-music-festival-night-copy-space.jpg'
+    ];
+    let current = 0;
+
+    function updateHeroBackground() {
+      hero.style.backgroundImage = `url('${images[current]}')`;
+    }
+
+    function nextImage() {
+      current = (current + 1) % images.length;
+      updateHeroBackground();
+    }
+
+    function prevImage() {
+      current = (current - 1 + images.length) % images.length;
+      updateHeroBackground();
+    }
+
+    // Slideshow otomatis
+    setInterval(nextImage, 5000);
+  </script>
 
 </body>
 </html>

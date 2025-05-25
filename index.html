@@ -14,7 +14,7 @@
 
     body {
       line-height: 1.6;
-      background-color: #c3c9d6;
+      background-color: #e4e1d9;
     }
 
     .top-header {
@@ -31,6 +31,22 @@
     .top-header img.logo {
       height: 40px;
     }
+    .nav-menu {
+  margin-left: auto;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #345d88;
+}
 
     header.hero {
       position: relative;
@@ -167,6 +183,57 @@
     .registration-form button:hover {
       background-color:  #4e6f92;
     }
+    .supported-section {
+  padding: 40px 0;
+  text-align: center;
+  background-color: #f9f9f9;
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+  border-left: none;
+}
+
+.supported-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+}
+
+.supported-swiper .swiper-slide img {
+  max-height: 80px;
+  max-width: 160px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.supported-swiper .swiper-slide img:hover {
+  transform: scale(1.1);
+}.supported-swiper {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.supported-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Tambahkan tinggi agar tidak 0 */
+}
+
+.supported-swiper .swiper-slide img {
+  max-height: 80px;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
 
     footer {
   background-color: #345d88;
@@ -240,9 +307,17 @@
   <!-- Logo -->
   <div class="top-header">
     <img class="logo" src="GIS-White-2-400x145.webp" alt="Logo Festival" />
+    <nav class="nav-menu">
+      <a href="">Home</a>
+      <a href="">About Us</a>
+      <a href="">Schedule</a>
+      <a href="">Register</a>
+      <a href="">Contact</a>
+    </nav>
   </div>
-
-  <!-- Hero Section -->
+  
+  
+  <!-- Hero Section dan judul -->
   <header class="hero" id="hero">
     <div class="arrow left" onclick="prevImage()">&#10094;</div>
     <div class="arrow right" onclick="nextImage()">&#10095;</div>
@@ -252,9 +327,8 @@
     </div>
   </header>
 
-  <!-- Section lainnya (tidak diubah) -->
-  <!-- ... sama seperti sebelumnya ... -->
 
+<!-- deskripsi -->
   <section class="event-description">
     <h2>Tentang Acara</h2>
     <p>Festival Musik Jakarta 2025 mempersembahkan berbagai genre musik dari band lokal hingga artis internasional. Acara ini akan berlangsung selama 3 hari di Lapangan Banteng, Jakarta Pusat.</p>
@@ -292,7 +366,7 @@
     </div>
   </section>
 
-  <!-- Form -->
+  <!-- regist Form -->
   <section class="registration-form">
     <h2>Daftar Sekarang</h2>
     <form>
@@ -310,8 +384,27 @@
     </form>
   </section>
 
+  <section class="supported-section">
+    <h2 class="section-title">Supported by</h2>
+    <!-- Tambahkan class 'swiper' langsung -->
+<div class="swiper supported-swiper">
+  <div class="swiper-wrapper">
+    <!-- Ganti src dengan logo Anda -->
+    <div class="swiper-slide"><img src="playstation.svg" alt="Supporter 1"></div>
+    <div class="swiper-slide"><img src="netflix.svg" alt="Supporter 2"></div>
+    <div class="swiper-slide"><img src="roblox.svg" alt="Supporter 3"></div>
+    <div class="swiper-slide"><img src="cocacola.svg" alt="Supporter 4"></div>
+    <div class="swiper-slide"><img src="apple.svg" alt="Supporter 5"></div>
+    <div class="swiper-slide"><img src="shopee.svg" alt="Supporter 6"></div>
+    <div class="swiper-slide"><img src="f1.svg" alt="Supporter 7"></div>
+    <div class="swiper-slide"><img src="2k.svg" alt="Supporter 8"></div>
+  </div>
+</div>
 
-   
+  </section>
+  
+
+   <!-- footer -->
     <footer>
         <div class="footer-top">
           <div class="footer-column">
@@ -386,6 +479,36 @@
     // Slideshow otomatis
     setInterval(nextImage, 5000);
   </script>
+<!-- Swiper.js CDN -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Swiper Init Script -->
+<script>
+  var swiper = new Swiper(".supported-swiper", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 4,
+      },
+      1024: {
+        slidesPerView: 5,
+      },
+    },
+  });
+</script>
 
 </body>
 </html>

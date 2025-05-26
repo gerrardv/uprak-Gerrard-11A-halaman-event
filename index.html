@@ -3,177 +3,230 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Festival Musik Jakarta 2025</title>
+  <title>Festival Musik LOE GIS 2025</title>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
       line-height: 1.6;
-      background-color: #e4e1d9;
+      background-color: #f7faff;
+      color: #222;
     }
 
     .top-header {
       position: sticky;
       top: 0;
-      background-color: #345d88;
+      background-color: #003366;
       display: flex;
       align-items: center;
-      padding: 10px 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 15px 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       z-index: 1000;
     }
 
     .top-header img.logo {
-      height: 40px;
+      height: 45px;
     }
+
     .nav-menu {
-  margin-left: auto;
-  display: flex;
-  gap: 20px;
+      margin-left: auto;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .nav-menu a:hover {
+      color: #aad4ff;
+    }
+
+  .hero {
+  position: relative;
+  overflow: hidden;
 }
 
-.nav-menu a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+.hero-text {
+  position: relative;
+  z-index: 1;
 }
 
-.nav-menu a:hover {
-  color: #345d88;
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
 }
+
+.hero-background.active {
+  opacity: 1;
+  z-index: 0;
+}
+
 
     header.hero {
       position: relative;
       background-image: url('people-festival.jpg');
       background-size: cover;
       background-position: center;
-      height: 80vh;
+      height: 85vh;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
       text-align: center;
-      transition: background-image 1s ease-in-out;
     }
 
     .hero-text h1 {
-      font-size: 3em;
+      font-size: 3.5em;
       margin-bottom: 0.2em;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
     }
 
     .hero-text p {
-      font-size: 1.2em;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+      font-size: 1.3em;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
     }
 
-    /* Tombol Panah */
     .arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 2rem;
+      font-size: 2.5rem;
       color: white;
       background-color: rgba(0, 0, 0, 0.3);
       padding: 10px;
       cursor: pointer;
       z-index: 10;
-      user-select: none;
       border-radius: 50%;
     }
 
-    .arrow.left {
-      left: 20px;
-    }
-
-    .arrow.right {
-      right: 20px;
-    }
+    .arrow.left { left: 30px; }
+    .arrow.right { right: 30px; }
 
     section {
       padding: 60px 20px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
     section h2 {
-      margin-bottom: 20px;
-      font-size: 2em;
-      color: #345d88;
-      border-left: 5px solid #345d88;
-      padding-left: 10px;
+      margin-bottom: 25px;
+      font-size: 2.2em;
+      color: #003366;
+      border-left: 5px solid #007acc;
+      padding-left: 15px;
+    }
+
+    .event-description p {
+      font-size: 1.1em;
+      line-height: 1.8;
     }
 
     .event-schedule ul {
       list-style: none;
-      background: #f5eeee;
+      background: #eef6ff;
       padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      border-radius: 10px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.1);
     }
 
     .event-schedule li {
-      padding: 10px 0;
-      border-bottom: 1px solid #ddd;
+      padding: 12px 0;
+      border-bottom: 1px solid #ccc;
     }
 
     .event-schedule li:last-child {
       border-bottom: none;
     }
 
-    .speakers-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+  .speaker-card {
+  background: #ffffff; 
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgb(189, 189, 196);
+  max-width: 280px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.speakers-container {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
 
-    .speaker-card {
-      flex: 1;
-      min-width: 250px;
-      background: #f0f0f0;
-      padding: 20px;
-      text-align: center;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
+.speaker-card:hover {
+  transform: scale(1.05);
+}
 
-    .speaker-card img {
-      border-radius: 50%;
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      margin-bottom: 10px;
-    }
+.speaker-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-bottom: 3px solid #007acc;
+}
+
+.speaker-info {
+  padding: 15px 20px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.speaker-info h3 {
+  margin-bottom: 8px;
+  font-size: 1.6em;
+}
+
+.speaker-info p {
+  margin-bottom: 5px;
+  font-size: 1em;
+  opacity: 0.85;
+}
+
 
     .registration-form form {
       display: flex;
       flex-direction: column;
       gap: 15px;
-      background: #f0f0f0;
+      background: white;
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
 
     .registration-form input,
     .registration-form select {
-      padding: 10px;
+      padding: 12px;
       font-size: 1em;
-      border-radius: 5px;
+      border-radius: 6px;
       border: 1px solid #ccc;
     }
 
     .registration-form button {
-      padding: 10px;
+      padding: 12px;
       font-size: 1em;
-      border-radius: 5px;
-      background-color: #345d88;
+      border-radius: 6px;
+      background-color: #003366;
       color: white;
       border: none;
       cursor: pointer;
@@ -181,124 +234,100 @@
     }
 
     .registration-form button:hover {
-      background-color:  #4e6f92;
+      background-color: #0055aa;
     }
+
     .supported-section {
-  padding: 40px 0;
-  text-align: center;
-  background-color: #f9f9f9;
-  margin-bottom: 60px;
-}
+      background-color: #f0f8ff;
+      padding: 50px 0;
+      text-align: center;
+    }
 
-.section-title {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #1a1a1a;
-  border-left: none;
-}
+    .section-title {
+      font-size: 2em;
+      margin-bottom: 30px;
+      color: #003366;
+    }
 
-.supported-swiper .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: auto;
-}
+    .supported-swiper {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
 
-.supported-swiper .swiper-slide img {
-  max-height: 80px;
-  max-width: 160px;
-  object-fit: contain;
-  transition: transform 0.3s;
-}
+    .supported-swiper .swiper-slide img {
+      max-height: 80px;
+      object-fit: contain;
+      transition: transform 0.3s;
+    }
 
-.supported-swiper .swiper-slide img:hover {
-  transform: scale(1.1);
-}.supported-swiper {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px 0;
-}
-
-.supported-swiper .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px; /* Tambahkan tinggi agar tidak 0 */
-}
-
-.supported-swiper .swiper-slide img {
-  max-height: 80px;
-  max-width: 100%;
-  object-fit: contain;
-  transition: transform 0.3s;
-}
-
+    .supported-swiper .swiper-slide img:hover {
+      transform: scale(1.1);
+    }
 
     footer {
-  background-color: #345d88;
-  color: white;
-  padding: 40px 20px 20px 20px;
-  font-size: 14px;
-}
+      background-color: #003366;
+      color: white;
+      padding: 50px 20px 30px;
+      font-size: 14px;
+    }
 
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1000px;
-  margin: 0 auto 30px auto;
-  flex-wrap: wrap;
-  gap: 20px;
-}
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto 30px auto;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-.footer-column {
-  flex: 1 1 250px;
-  min-width: 200px;
-}
+    .footer-column {
+      flex: 1 1 250px;
+      min-width: 220px;
+    }
 
-.footer-column h3 {
-  font-size: 18px;
-  margin-bottom: 12px;
-  border-left: 5px solid #f0f0f0;
-  padding-left: 10px;
-}
+    .footer-column h3 {
+      font-size: 18px;
+      margin-bottom: 14px;
+      border-left: 5px solid #ffffff;
+      padding-left: 10px;
+    }
 
-.footer-column ul {
-  list-style: none;
-  padding-left: 0;
-}
+    .footer-column ul {
+      list-style: none;
+    }
 
-.footer-column ul li {
-  margin-bottom: 8px;
-}
+    .footer-column ul li {
+      margin-bottom: 8px;
+    }
 
-.social-icons a {
-  margin-right: 15px;
-  display: inline-block;
-}
+    .social-icons a {
+      margin-right: 15px;
+      display: inline-block;
+    }
 
-.social-icons img {
-  width: 24px;
-  height: 24px;
-  filter: brightness(0) invert(1); /* agar icon putih */
-  transition: filter 0.3s ease;
-}
+    .social-icons img {
+      width: 26px;
+      height: 26px;
+      filter: brightness(0) invert(1);
+      transition: filter 0.3s ease;
+    }
 
-.social-icons a:hover img {
-  filter: brightness(0.7) invert(1);
-}
+    .social-icons a:hover img {
+      filter: brightness(0.7) invert(1);
+    }
 
-.footer-bottom {
-  background-color: #345d88;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  max-width: 1000px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  gap: 10px;
-  font-size: 13px;
-
+    .footer-bottom {
+      background-color: #002244;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 13px;
     }
   </style>
 </head>
@@ -308,34 +337,36 @@
   <div class="top-header">
     <img class="logo" src="GIS-White-2-400x145.webp" alt="Logo Festival" />
     <nav class="nav-menu">
-      <a href="">Home</a>
-      <a href="">About Us</a>
-      <a href="">Schedule</a>
-      <a href="">Register</a>
-      <a href="">Contact</a>
+      <a href="#hero">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#event-schedule">Schedule</a>
+      <a href="#register">Register</a>
+      <a href="#footer">Contact</a>
     </nav>
   </div>
   
   
   <!-- Hero Section dan judul -->
-  <header class="hero" id="hero">
-    <div class="arrow left" onclick="prevImage()">&#10094;</div>
-    <div class="arrow right" onclick="nextImage()">&#10095;</div>
-    <div class="hero-text">
-      <h1>Festival Musik LOE GIS 2025</h1>
-      <p>Rasakan pengalaman musik terbaik</p>
-    </div>
-  </header>
+<header class="hero" id="hero">
+  <div class="hero-background" id="heroBg1"></div>
+  <div class="hero-background" id="heroBg2"></div>
+  <div class="arrow left" onclick="prevImage()">&#10094;</div>
+  <div class="arrow right" onclick="nextImage()">&#10095;</div>
+  <div class="hero-text">
+    <h1>Festival Musik LOE GIS 2025</h1>
+    <p>Rasakan pengalaman musik terbaik</p>
+  </div>
+</header>
 
 
 <!-- deskripsi -->
-  <section class="event-description">
+  <section class="event-description" id="about"> 
     <h2>Tentang Acara</h2>
     <p>Festival Musik LOE GIS merupakan acara tahunan dari gis yang mengundang para bintang tamu dan pemain band terkenal, festival ini sudah dilakukan sejak puluhan tahun lalu dan menjadi salah satu hiburan yang paling disukai di kramatwatu serta sudah didukung oleh perusahaan internasional seperti coca cola,f1,shopee,dll.Festival ini dijamin murah dan terjangkau karena memang ditunjukan untuk anak muda yang ingin merasakan pengalaman musik yang murah namun mewah. </p>
   </section>
 
   <!-- Jadwal -->
-  <section class="event-schedule">
+  <section class="event-schedule" id="event-schedule">
     <h2>Jadwal Acara & Harga</h2>
     <ul>
       <li><strong>Hari 1:</strong> Pembukaan & Penampilan Band Indie (10.00 - 22.00) Rp.100.000</li>
@@ -347,31 +378,38 @@
 
   <!-- Pengisi Acara -->
   <section class="event-speakers">
-    <h2>Pengisi Acara</h2>
-    <div class="speakers-container">
-      <div class="speaker-card">
-        <img src="wp2253070.webp" alt="michael">
-        <h3>Michael bubble</h3>
+  <h2>Pengisi Acara</h2>
+  <div class="speakers-container">
+    <div class="speaker-card">
+      <img src="wp2253070.webp" alt="michael" />
+      <div class="speaker-info">
+        <h3>Michael Bubble</h3>
         <p>Penyanyi Pop luar negeri</p>
         <p>Hari 1</p>
       </div>
-      <div class="speaker-card">
-        <img src="a6c0578d735f4d808457a00a01ca423a.png" alt="son">
+    </div>
+    <div class="speaker-card">
+      <img src="a6c0578d735f4d808457a00a01ca423a.png" alt="son" />
+      <div class="speaker-info">
         <h3>Tottenham Hotspur</h3>
-        <p>pemenang liga eropa</p>
+        <p>Pemenang liga eropa</p>
         <p>Hari 2</p>
       </div>
-      <div class="speaker-card">
-        <img src="Screenshot 2025-05-25 125227.png" alt="pewan">
+    </div>
+    <div class="speaker-card">
+      <img src="Screenshot 2025-05-25 125227.png" alt="pewan" />
+      <div class="speaker-info">
         <h3>PEWANNN</h3>
-        <p>gitaris legendaris</p>
+        <p>Gitaris legendaris</p>
         <p>Hari 3</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- regist Form -->
-  <section class="registration-form">
+  <section class="registration-form" id="register">
     <h2>Daftar Sekarang</h2>
     <form>
       <input type="text" placeholder="Nama Lengkap" required>
@@ -390,10 +428,10 @@
 
   <section class="supported-section">
     <h2 class="section-title">Supported by</h2>
-    <!-- Tambahkan class 'swiper' langsung -->
+    <!-- swiper class untuk klasifikasi -->
 <div class="swiper supported-swiper">
   <div class="swiper-wrapper">
-    <!-- Ganti src dengan logo Anda -->
+    <!-- logo  -->
     <div class="swiper-slide"><img src="playstation.svg" alt="Supporter 1"></div>
     <div class="swiper-slide"><img src="netflix.svg" alt="Supporter 2"></div>
     <div class="swiper-slide"><img src="roblox.svg" alt="Supporter 3"></div>
@@ -420,7 +458,8 @@
             </ul>
           </div>
       
-          <div class="footer-column">
+          <div class="footer-column " id="footer"> 
+
             <h3>Contact Us</h3>
             <ul>
               <li>Call Us</li>
@@ -456,41 +495,69 @@
       </footer>
 
 
-  <!-- Script Slideshow -->
+  <!-- hero bergeral -->
   <script>
-    const hero = document.getElementById('hero');
-    const images = [
-      'people-festival.jpg',
-      'people-concert-with-smoke-overlay-texture.jpg',
-      'excited-audience-watching-confetti-fireworks-having-fun-music-festival-night-copy-space.jpg'
-    ];
-    let current = 0;
+  const images = [
+    'people-festival.jpg',
+    'wp8930518.webp',
+    'wd8930689.webp',
+  ];
 
-    function updateHeroBackground() {
-      hero.style.backgroundImage = `url('${images[current]}')`;
-    }
+  let current = 0;
+  const bg1 = document.getElementById('heroBg1');
+  const bg2 = document.getElementById('heroBg2');
+  let showingBg1 = true;
 
-    function nextImage() {
-      current = (current + 1) % images.length;
-      updateHeroBackground();
-    }
+  function preloadImage(src) {
+    const img = new Image();
+    img.src = src;
+  }
 
-    function prevImage() {
-      current = (current - 1 + images.length) % images.length;
-      updateHeroBackground();
-    }
+  function updateHeroBackground() {
+    const next = (current + 1) % images.length;
+    const nextImage = images[next];
+    preloadImage(nextImage);
 
-    // Slideshow otomatis
-    setInterval(nextImage, 5000);
-  </script>
-<!-- Swiper.js CDN -->
+    const visible = showingBg1 ? bg1 : bg2;
+    const hidden = showingBg1 ? bg2 : bg1;
+
+    hidden.style.backgroundImage = `url('${nextImage}')`;
+    hidden.classList.add('active');
+    visible.classList.remove('active');
+
+    showingBg1 = !showingBg1;
+    current = next;
+  }
+
+  function nextImageManual() {
+    updateHeroBackground();
+  }
+
+  function prevImageManual() {
+    current = (current - 2 + images.length) % images.length;
+    updateHeroBackground();
+  }
+
+  // First load
+  bg1.style.backgroundImage = `url('${images[current]}')`;
+  bg1.classList.add('active');
+  preloadImage(images[1]);
+
+  // Auto-play
+  setInterval(updateHeroBackground, 5000);
+
+  // Navigation
+  window.nextImage = nextImageManual;
+  window.prevImage = prevImageManual;
+</script>
+
+
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 />
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<!-- Swiper Init Script -->
 <script>
   var swiper = new Swiper(".supported-swiper", {
     slidesPerView: 4,
@@ -511,6 +578,22 @@
         slidesPerView: 5,
       },
     },
+  });
+</script>
+<!-- untuk slide agar tidak patah -->
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId.length > 1 && document.querySelector(targetId)) {
+        e.preventDefault();
+        const targetElement = document.querySelector(targetId);
+        window.scrollTo({
+          top: targetElement.offsetTop - 60, // offset untuk header
+          behavior: 'smooth'
+        });
+      }
+    });
   });
 </script>
 

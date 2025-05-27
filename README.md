@@ -9,3 +9,8 @@ commit kedua saya membuat hero mendapat animasi dengan beberapa gambar yang saya
 
 commit ketiga saya membuat footer dengan desain final beserta ada icon contact, related, dll
 
+commit keempat saya membuat supported by dari brand terkenal dan bergerak serta menambahkan header yang bisa dipencet
+
+commit kelima saya menyesuaikan teks dan gambar agar menjadi terlihat seperti website beneran
+
+commit keenam dan terakhir saya melakukan finishing dan perubahan besar terhadap warna serta beberapa gambar saya ganti dengan resolusi lebih baik

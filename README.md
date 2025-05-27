@@ -14,7 +14,9 @@ commit keempat saya membuat supported by dari brand terkenal dan bergerak serta 
 
 commit kelima saya menyesuaikan teks dan gambar agar menjadi terlihat seperti website beneran
 
-commit keenam dan terakhir saya melakukan finishing dan perubahan besar terhadap warna serta beberapa gambar saya ganti dengan resolusi lebih baik
+commit keenam saya melakukan finishing dan perubahan besar terhadap warna serta beberapa gambar saya ganti dengan resolusi lebih baik
+
+commit terakhir/7 saya meperbaiki font
 
 fitur yang dimiliki dalam website saya seperti header yang akan berpindah saat di click dan register yang dapat diisi kemudian sisanya hanya desain landing page seperti yang diminta
 
